@@ -7,11 +7,13 @@ public class Prestige : MonoBehaviour
 {
 
     public GameObject PrestigeText;
-    int TotalPowerRequirement;
+    public GameObject PowerRequirementText;
+    public int TotalPowerRequirement = 100000;
 
     public void IncreasePrestigeMulti(){
 
         if (Abilities.TotalPower>TotalPowerRequirement){
+            TotalPowerRequirement *= 100;
             Abilities.Psychic = 0;
             Abilities.Endurance = 0;
             Abilities.Agility = 0;
@@ -19,7 +21,7 @@ public class Prestige : MonoBehaviour
             Abilities.PrestigeMultiplier *= 2;
             Tokens.tokenMultiplier *= 2;
             PrestigeText.GetComponent<Text>().text = "Reputation Multiplier: x" + Abilities.PrestigeMultiplier;
-            PrestigeText.GetComponent<Text>().text = "Required Total Power: " + TotalPowerRequirement;
+            PowerRequirementText.GetComponent<Text>().text = "Required Total Power: " + TotalPowerRequirement;
         }
     }
 }

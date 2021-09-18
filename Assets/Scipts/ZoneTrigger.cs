@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ZoneTrigger : MonoBehaviour
 {
-    public GameObject timerText;
     float timer;
 
     public bool isAgility;
@@ -61,7 +60,6 @@ public class ZoneTrigger : MonoBehaviour
                 }
             }
         }
-        timerText.GetComponent<Text>().text = "Time: " + timer;
     }
     private void OnTriggerExit(Collider other) {
         Debug.Log("Zone has been Exited");
