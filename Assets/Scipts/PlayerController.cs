@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
-    float Speed;
+    [SerializeField] float Speed;
     CharacterController controller = null;
     Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] KeyCode InventoryButton;
     [SerializeField] KeyCode InventoryEscapeButton;
     public GameObject InventoryInterface;
+
 
     void Start()
     {
