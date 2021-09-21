@@ -11,11 +11,16 @@ public class ZoneTrigger : MonoBehaviour
     public bool isStrength;
     public bool isPsychic;
     public bool isEndurance;
+    public GameObject PowerRequiredText;
 
     int IncreaseVal = 1;
     [SerializeField] int Multiplier = 1;
     [SerializeField] int StatRequirement = 0;
 
+
+    void Update(){
+        PowerRequiredText.GetComponent<TextMesh>().text = "Power Required: " + StatRequirement;
+    }
 
     private void OnTriggerEnter(Collider other) {
         timer = 0;
