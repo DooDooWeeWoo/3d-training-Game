@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public static int walkSpeed;
     [SerializeField] int SprintSpeed = 10;
     [SerializeField] float gravity = -13.0f;
-    [SerializeField] float JumpStrength = 10.0f;
+    public static float JumpStrength = 7.0f;
     [SerializeField] bool lockCursor = true;
     [SerializeField] KeyCode JumpKey;
     [SerializeField] KeyCode SprintKey;
@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void UpdateMovement()
     {
+        walkSpeed = Mathf.Clamp(walkSpeed, 1, 200);
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         targetDir.Normalize();
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);

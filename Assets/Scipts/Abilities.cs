@@ -27,7 +27,11 @@ public class Abilities : MonoBehaviour
     void Update()
     {
         TotalPower = (Agility+Strength+Endurance+Psychic);
-        PlayerController.walkSpeed = Agility;
+
+        PlayerController.walkSpeed = Agility/10000;
+        PlayerController.JumpStrength = (Agility+Strength)/10000;
+        ObstaclePush.forceMagnitude = (Strength/10);
+        
         AgilityText.GetComponent<Text>().text = "Agility: " + Agility;
         StrengthText.GetComponent<Text>().text = "Strength: " + Strength;
         PsychicText.GetComponent<Text>().text = "Psychic: " + Psychic;

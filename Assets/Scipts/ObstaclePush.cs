@@ -5,18 +5,8 @@ using UnityEngine;
 public class ObstaclePush : MonoBehaviour
 {
  
-    [SerializeField] private float forceMagnitude;
+    public static float forceMagnitude;
 
-    void Start()
-    {
-        
-    }
-
-  
-    void Update()
-    {
-        
-    }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
         
