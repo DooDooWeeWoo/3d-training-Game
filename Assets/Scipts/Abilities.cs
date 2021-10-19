@@ -23,6 +23,7 @@ public class Abilities : MonoBehaviour
     public static int TotalPower;
     
     public static int PrestigeMultiplier = 1;
+    public static int prestige;
 
     void Update()
     {
