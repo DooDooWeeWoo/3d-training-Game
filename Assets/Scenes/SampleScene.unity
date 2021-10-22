@@ -1604,6 +1604,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 1
   PowerRequiredText: {fileID: 1450287788}
+  Stats: {fileID: 1504142039}
   Multiplier: 50
   StatRequirement: 100000
 --- !u!65 &422581584
@@ -2119,6 +2120,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 277815451}
+  Stats: {fileID: 1504142039}
   Multiplier: 5
   StatRequirement: 1000
 --- !u!65 &459512201
@@ -2539,6 +2541,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 1981356969}
+  Stats: {fileID: 1504142039}
   Multiplier: 10
   StatRequirement: 10000
 --- !u!65 &486232423
@@ -2683,6 +2686,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 670381823}
+  Stats: {fileID: 1504142039}
   Multiplier: 50
   StatRequirement: 100000
 --- !u!65 &487603903
@@ -3071,6 +3075,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 1
   PowerRequiredText: {fileID: 83701694}
+  Stats: {fileID: 1504142039}
   Multiplier: 10
   StatRequirement: 10000
 --- !u!65 &572752150
@@ -3491,6 +3496,7 @@ MonoBehaviour:
   isPsychic: 1
   isEndurance: 0
   PowerRequiredText: {fileID: 1716217462}
+  Stats: {fileID: 1504142039}
   Multiplier: 10
   StatRequirement: 10000
 --- !u!65 &640854811
@@ -3894,6 +3900,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 1379452146}
+  Stats: {fileID: 1504142039}
   Multiplier: 1
   StatRequirement: 0
 --- !u!65 &686580212
@@ -5114,6 +5121,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 32264774}
+  Stats: {fileID: 1504142039}
   Multiplier: 10
   StatRequirement: 10000
 --- !u!65 &819462068
@@ -5391,6 +5399,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 40840104}
+  Stats: {fileID: 1504142039}
   Multiplier: 50
   StatRequirement: 100000
 --- !u!65 &837765268
@@ -5535,6 +5544,7 @@ MonoBehaviour:
   isPsychic: 1
   isEndurance: 0
   PowerRequiredText: {fileID: 1989439066}
+  Stats: {fileID: 1504142039}
   Multiplier: 1
   StatRequirement: 0
 --- !u!65 &843709865
@@ -7388,6 +7398,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 1587389605}
+  Stats: {fileID: 1504142039}
   Multiplier: 1
   StatRequirement: 0
 --- !u!1 &1218413432
@@ -8665,6 +8676,7 @@ MonoBehaviour:
   isPsychic: 1
   isEndurance: 0
   PowerRequiredText: {fileID: 425932157}
+  Stats: {fileID: 1504142039}
   Multiplier: 50
   StatRequirement: 100000
 --- !u!65 &1468008262
@@ -8910,6 +8922,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502824877}
   m_CullTransparentMesh: 1
+--- !u!114 &1504142039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1189559903879404191, guid: 78b0b2c9380ab9042b18de196d200871, type: 3}
+  m_PrefabInstance: {fileID: 1189559905036527646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643c1d720dfd70145b7191337d589ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1545708775
 Mesh:
   m_ObjectHideFlags: 0
@@ -9429,6 +9452,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 1
   PowerRequiredText: {fileID: 538354376}
+  Stats: {fileID: 1504142039}
   Multiplier: 1
   StatRequirement: 0
 --- !u!65 &1601576536
@@ -9573,6 +9597,7 @@ MonoBehaviour:
   isPsychic: 1
   isEndurance: 0
   PowerRequiredText: {fileID: 1910532737}
+  Stats: {fileID: 1504142039}
   Multiplier: 5
   StatRequirement: 1000
 --- !u!65 &1633777323
@@ -9976,6 +10001,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 1
   PowerRequiredText: {fileID: 1673510331}
+  Stats: {fileID: 1504142039}
   Multiplier: 5
   StatRequirement: 1000
 --- !u!65 &1692914334
@@ -10215,6 +10241,7 @@ MonoBehaviour:
   isPsychic: 0
   isEndurance: 0
   PowerRequiredText: {fileID: 212009385}
+  Stats: {fileID: 1504142039}
   Multiplier: 5
   StatRequirement: 1000
 --- !u!65 &1719365854
@@ -10778,6 +10805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc96381f57a7ca84cbcd09182def8de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stats: {fileID: 0}
   ButtonText: {fileID: 1502824877}
   price: 50
 --- !u!4 &1803534474
@@ -10808,6 +10836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonText: {fileID: 687455046}
   price: 50
+  Stats: {fileID: 0}
 --- !u!114 &1803534476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10820,6 +10849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1808a432628376240b85c18468f54a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stats: {fileID: 0}
   ButtonText: {fileID: 1427993315}
   price: 50
 --- !u!114 &1803534477
@@ -10836,6 +10866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonText: {fileID: 568741459}
   price: 50
+  Stats: {fileID: 0}
 --- !u!114 &1803534478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10878,6 +10909,7 @@ MonoBehaviour:
   PrestigeText: {fileID: 1754516682}
   PowerRequirementText: {fileID: 1202918893}
   TotalPowerRequirement: 100000
+  Stats: {fileID: 0}
 --- !u!43 &1877463928
 Mesh:
   m_ObjectHideFlags: 0

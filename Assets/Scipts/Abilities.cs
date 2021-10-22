@@ -11,19 +11,20 @@ public class Abilities : MonoBehaviour
     public GameObject EnduranceText;
     public GameObject TotalPowerText;
 
-    public static int AgilityMultiplier = 1;
-    public static int StrengthMultiplier = 1;
-    public static int PsychicMultiplier = 1;
-    public static int EnduranceMultiplier = 1;
+    public int AgilityMultiplier = 1;
+    public int StrengthMultiplier = 1;
+    public int PsychicMultiplier = 1;
+    public int EnduranceMultiplier = 1;
 
-    public static int Strength = 1;
-    public static int Agility = 1;
-    public static int Endurance = 1;
-    public static int Psychic = 1;
-    public static int TotalPower;
+    public int Strength = 1;
+    public int Agility = 1;
+    public int Endurance = 1;
+    public int Psychic = 1;
+    public int TotalPower;
     
-    public static int PrestigeMultiplier = 1;
-    public static int prestige;
+    public int PrestigeMultiplier = 1;
+    public int prestige;
+    
 
     void Update()
     {

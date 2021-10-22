@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class SpeedMultiIncrease : MonoBehaviour
 {
+
+    public Abilities Stats;
     public GameObject ButtonText;
     [SerializeField] int price = 100;
+
+    void Start() 
+    {
+        Stats = GetComponent<Abilities>();        
+    }
+
   public void IncreaseAgilityMulti(){
       if (Tokens.TokenVal >= price){
             Tokens.TokenVal -= price;
             price *= 5;
-            Abilities.AgilityMultiplier *= 2;
+            Stats.AgilityMultiplier *= 2;
         }
-        ButtonText.GetComponent<Text>().text = "Agility Multiplier: x" + Abilities.AgilityMultiplier + "  $" + price;
+        ButtonText.GetComponent<Text>().text = "Agility Multiplier: x" + Stats.AgilityMultiplier + "  $" + price;
     }
 }
 

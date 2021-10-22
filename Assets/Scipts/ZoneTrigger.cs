@@ -12,12 +12,16 @@ public class ZoneTrigger : MonoBehaviour
     public bool isPsychic;
     public bool isEndurance;
     public GameObject PowerRequiredText;
+   private Abilities Stats;
 
     int IncreaseVal = 1;
     [SerializeField] int Multiplier = 1;
     [SerializeField] int StatRequirement = 0;
 
-
+    void Start() 
+    {
+        Stats = GetComponent<Abilities>();        
+    }
     void Update(){
         PowerRequiredText.GetComponent<TextMesh>().text = "Power Required: " + StatRequirement;
     }
@@ -30,38 +34,38 @@ public class ZoneTrigger : MonoBehaviour
         
 
         if (isStrength){
-            if (Abilities.Strength>=StatRequirement){
+            if (Stats.Strength>=StatRequirement){
                 timer += (Time.deltaTime/2);
                 if (timer >= 1){
                     timer = 0;
-                    Abilities.Strength += (IncreaseVal*Multiplier*Abilities.StrengthMultiplier*Abilities.PrestigeMultiplier);
+                    Stats.Strength += (IncreaseVal*Multiplier*Stats.StrengthMultiplier*Stats.PrestigeMultiplier);
                 }
             }
         }
         if (isAgility){
-            if (Abilities.Agility>=StatRequirement){
+            if (Stats.Agility>=StatRequirement){
                 timer += (Time.deltaTime/2);
                 if (timer >= 1){
                     timer = 0;
-                    Abilities.Agility += (IncreaseVal*Multiplier*Abilities.AgilityMultiplier*Abilities.PrestigeMultiplier);
+                    Stats.Agility += (IncreaseVal*Multiplier*Stats.AgilityMultiplier*Stats.PrestigeMultiplier);
                 }
             }
         }
         if (isPsychic){
-            if (Abilities.Psychic>=StatRequirement){
+            if (Stats.Psychic>=StatRequirement){
                 timer += (Time.deltaTime/2);
                 if (timer >= 1){
                     timer = 0;
-                    Abilities.Psychic += (IncreaseVal*Multiplier*Abilities.PsychicMultiplier*Abilities.PrestigeMultiplier);
+                    Stats.Psychic += (IncreaseVal*Multiplier*Stats.PsychicMultiplier*Stats.PrestigeMultiplier);
                 }
             }
         }
         if (isEndurance){
-            if (Abilities.Endurance>=StatRequirement){
+            if (Stats.Endurance>=StatRequirement){
                 timer += (Time.deltaTime/2);
                 if (timer >= 1){
                     timer = 0;
-                    Abilities.Endurance += (IncreaseVal*Multiplier*Abilities.EnduranceMultiplier*Abilities.PrestigeMultiplier);
+                    Stats.Endurance += (IncreaseVal*Multiplier*Stats.EnduranceMultiplier*Stats.PrestigeMultiplier);
                 }
             }
         }

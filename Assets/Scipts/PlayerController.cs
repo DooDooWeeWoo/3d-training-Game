@@ -28,15 +28,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] KeyCode InventoryButton;
     [SerializeField] KeyCode InventoryEscapeButton;
     public GameObject InventoryInterface;
+    public Abilities Stats;
 
 
     void Start()
     {
+        Stats = GetComponent<Abilities>();        
+
         controller = GetComponent<CharacterController>();
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            
         }
     }
 
