@@ -2,34 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlainController : MonoBehaviour
+public class Player: MonoBehaviour
 {
     [SerializeField] Transform playerCamera = null;
     [SerializeField][Range(0.0f, 5.0f)] float mouseSensitivity = 3.5f;
     [SerializeField][Range(0.0f, 0.5f)] float moveSmoothTime = 0.3f;
-    [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
-    public int walkSpeed;
-    float Speed;
-    [SerializeField] int SprintSpeed = 10;
+    [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;    
     [SerializeField] float gravity = -13.0f;
-    [SerializeField] float JumpStrength = 10.0f;
+    public float JumpStrength = 7.0f;
     [SerializeField] bool lockCursor = true;
     [SerializeField] KeyCode JumpKey;
-    [SerializeField] KeyCode SprintKey;
-
-
 
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
-
+    [SerializeField] float Speed;
     CharacterController controller = null;
     Vector2 currentDir = Vector2.zero;
-    public static Vector2 currentDirVelocity = Vector2.zero;
-    Vector2 currentMouseDelta = Vector2.zero;
+    Vector2 currentDirVelocity = Vector2.zero;
+    public Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
-    public static Vector3 velocity; 
-
-
 
 
     void Start()
@@ -41,7 +32,6 @@ public class PlainController : MonoBehaviour
             Cursor.visible = false;
         }
     }
-
 
     void Update()
     {
@@ -61,6 +51,7 @@ public class PlainController : MonoBehaviour
 
     void UpdateMovement()
     {
+        Speed = Mathf.Clamp(Speed, 3, 200);
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         targetDir.Normalize();
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
@@ -68,18 +59,10 @@ public class PlainController : MonoBehaviour
             velocityY = 0.0f;
         }
         velocityY += gravity * Time.deltaTime;
-        velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * Speed + Vector3.up * velocityY;
+        Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * Speed + Vector3.up * velocityY;
         controller.Move(velocity * Time.deltaTime);
-
-
         if(Input.GetKeyDown(JumpKey)&&controller.isGrounded){
             velocityY += JumpStrength;
-        }
-        if(Input.GetKey(SprintKey)){
-            Speed = SprintSpeed;
-        }
-        else{
-            Speed = walkSpeed;
         }
     }
 }
