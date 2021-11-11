@@ -9,22 +9,34 @@ public class Player: MonoBehaviour
     [SerializeField][Range(0.0f, 0.5f)] float moveSmoothTime = 0.3f;
     [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;    
     [SerializeField] float gravity = -13.0f;
-    public float JumpStrength = 7.0f;
+    public float JumpStrength;
     [SerializeField] bool lockCursor = true;
     [SerializeField] KeyCode JumpKey;
 
     float cameraPitch = 0.0f;
     float velocityY = 0.0f;
-    [SerializeField] float Speed;
+    float Speed;
     CharacterController controller = null;
     Vector2 currentDir = Vector2.zero;
     Vector2 currentDirVelocity = Vector2.zero;
     public Vector2 currentMouseDelta = Vector2.zero;
     Vector2 currentMouseDeltaVelocity = Vector2.zero;
 
+    public GameObject StatsObject;
+
+    [HideInInspector]
+    public Stats stat;
 
     void Start()
     {
+        stat = StatsObject.GetComponent<Stats>();
+
+        Speed = stat.Agility;
+        Speed = Mathf.Clamp(Speed, 5.0f, 150.0f);
+        JumpStrength = Mathf.Clamp(JumpStrength, 5, 50);
+        JumpStrength = ((stat.Agility/500)+(stat.Strength/100));
+
+
         controller = GetComponent<CharacterController>();
         if(lockCursor)
         {
@@ -51,7 +63,14 @@ public class Player: MonoBehaviour
 
     void UpdateMovement()
     {
-        Speed = Mathf.Clamp(Speed, 3, 200);
+        
+        Speed = (stat.Agility/500);
+        Speed = Mathf.Clamp(Speed, 5, 150);
+        
+        JumpStrength = ((stat.Agility/500)+(stat.Strength/100));
+        JumpStrength = Mathf.Clamp(JumpStrength, 5, 50);
+
+
         Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         targetDir.Normalize();
         currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);

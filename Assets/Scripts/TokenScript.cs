@@ -19,7 +19,7 @@ public GameObject StatsObject;
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 1){
+        if (timer >= 15){
             timer = 0;
             stat.Tokens += (10*stat.TokenMultiplier);
         }
