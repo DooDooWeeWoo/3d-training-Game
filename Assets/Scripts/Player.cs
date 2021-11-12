@@ -8,7 +8,10 @@ public class Player: MonoBehaviour
     [SerializeField][Range(0.0f, 5.0f)] float mouseSensitivity = 3.5f;
     [SerializeField][Range(0.0f, 0.5f)] float moveSmoothTime = 0.3f;
     [SerializeField][Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;    
+
     [SerializeField] float gravity = 13.0f;
+    [SerializeField] float gravity = -13.0f;
+
     public float JumpStrength;
     [SerializeField] bool lockCursor = true;
     [SerializeField] KeyCode JumpKey;
